@@ -1,28 +1,24 @@
-import { useState } from "react";
+import "../styles/SearchBar.css"
 
-function SearchBar({ onSearch }) {
-    const [city, setCity] = useState("")
+export default function SearchBar({ city, setCity, onSearch }) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (city.trim() === "") return
-        onSearch(city.trim())
+        if (!city) return
+        onSearch()
+        // Clears input
         setCity("")
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="search-bar" onSubmit={handleSubmit}>
             <input
                 type="text"
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
-                placeholder="Enter a city"
-                required
+                placeholder="Enter city"
             />
             <button type="submit">Search</button>
-
-        </form >
+        </form>
     )
 }
-
-export default SearchBar

@@ -7,9 +7,10 @@ function Home() {
     const [weather, setWeather] = useState(null)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
+    const [city, setCity] = useState("")
 
     const API_KEY = import.meta.env.VITE_OPENWEATHER_KEY
-    
+
     const fetchWeather = async (city) => {
         if (!city) return
 
@@ -49,11 +50,14 @@ function Home() {
 
         <div>
             <h1>Weather</h1>
+            <SearchBar city={city} setCity={setCity} onSearch={() => fetchWeather(city)} />
+
 
             {loading && <p>Loading...</p>}
             {error && <p>{error}</p>}
             {weather && (
                 <div>
+
                     <h2>{weather.name}</h2>
                     <p>Temperature: {weather.temperature} C</p>
                     <p>Wind: {weather.wind} m/s</p>
