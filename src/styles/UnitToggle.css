@@ -1,0 +1,58 @@
+.unit-toggle {
+    position: relative;
+    display: flex;
+    background-color: var(--surface-primary);
+    border-radius: 100px;
+    margin: 1rem 0;
+    font-weight: 700;
+    overflow: hidden;
+    width: 200px;
+    padding: 8px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+}
+
+/* Slider behind buttons */
+.unit-toggle .slider {
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: 4px;
+    /* only left needed */
+    width: calc(50% - 4px);
+    background-color: var(--white);
+    border-radius: 100px;
+    transition: transform 150ms ease-in-out;
+    z-index: 0;
+}
+
+/* Slide depending on unit */
+.unit-toggle .slider.metric {
+    transform: translateX(0%);
+}
+
+.unit-toggle .slider.imperial {
+    transform: translateX(100%);
+}
+
+/* Buttons */
+.unit-toggle button {
+    flex: 1;
+    border-radius: 100px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: color 0.2s;
+    background-color: transparent;
+    border: none;
+    color: var(--text-secondary);
+    position: relative;
+    z-index: 1;
+}
+
+/* Active button text color */
+.unit-toggle button.active {
+    color: var(--text-primary);
+}

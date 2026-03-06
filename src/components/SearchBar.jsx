@@ -11,14 +11,15 @@ export default function SearchBar({ city, setCity, onSearch }) {
     }
 
     return (
-        <form className="search-bar" onSubmit={handleSubmit}>
+        <form className="search" onSubmit={handleSubmit}>
             <input
+                className="search-bar"
                 type="text"
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
                 placeholder="Enter city"
             />
-            <button type="submit">Search</button>
+            <button className="search-button" type="submit">Search</button>
         </form>
     )
 }
