@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react"
 import SearchBar from "../components/SearchBar"
+import WeatherCard from "../components/WeatherCard"
+import ErrorMessage from "../components/ErrorMessage"
 
 
 function Home() {
@@ -52,18 +54,9 @@ function Home() {
             <h1>Weather</h1>
             <SearchBar city={city} setCity={setCity} onSearch={() => fetchWeather(city)} />
 
-
             {loading && <p>Loading...</p>}
-            {error && <p>{error}</p>}
-            {weather && (
-                <div>
-
-                    <h2>{weather.name}</h2>
-                    <p>Temperature: {weather.temperature} C</p>
-                    <p>Wind: {weather.wind} m/s</p>
-                    <p>Condition: {weather.condition} </p>
-                </div>
-            )}
+            <ErrorMessage message={error} />
+            <WeatherCard weather={weather} />
         </div>
     )
 }
