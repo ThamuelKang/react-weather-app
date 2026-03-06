@@ -1,0 +1,21 @@
+.metadata {
+    display: flex;
+    gap: 12px;
+    color: var(--text-secondary)
+}
+
+h2 {
+    font-size: 40px;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.weather-card {
+    background: var(--white);
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+}

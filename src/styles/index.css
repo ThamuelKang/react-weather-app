@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+
+
+:root {
+  --text-primary: rgba(0, 0, 0, 1);
+  --text-secondary: rgba(0, 0, 0, 0.64);
+  --text-inverse: rgba(255, 255, 255, .8);
+  --surface-primary: rgba(0, 0, 0, .12);
+  --surface-green: #065428;
+  --blue: rgba(18, 129, 255, 1);
+  --blue-alpha: rgba(18, 129, 255, 0.4);
+
+  --white: rgba(255, 255, 255, 1);
+  --error-color: #ba0205;
+}
