@@ -1,26 +1,25 @@
 .forecast-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
     width: 100%;
     margin-top: 24px;
 }
 
 .forecast-card {
-    background: var(--white);
-    border: 1px solid var(--surface-primary);
-    border-radius: 12px;
-    padding: 20px;
+    background: var(--bg-primary);
+    border: 1px solid var(--surface-border);
+    border-radius: var(--radius-md);
+    padding: 20px 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
-    transition: transform 0.2s, box-shadow 0.2s;
+    gap: 10px;
+    transition: all 0.2s ease;
 }
 
 .forecast-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-md);
 }
 
 .forecast-date {
@@ -29,8 +28,8 @@
 
 .forecast-date h3 {
     margin: 0;
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 600;
     color: var(--text-primary);
 }
 
@@ -41,8 +40,8 @@
 }
 
 .forecast-icon {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,26 +55,26 @@
 
 .forecast-temp {
     display: flex;
-    gap: 12px;
-    align-items: center;
+    gap: 10px;
+    align-items: baseline;
 }
 
 .temp-high {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
     color: var(--text-primary);
     margin: 0;
 }
 
 .temp-low {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     color: var(--text-secondary);
     margin: 0;
 }
 
 .forecast-condition {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text-secondary);
     text-transform: capitalize;
     margin: 0;
@@ -84,10 +83,10 @@
 
 .forecast-details {
     display: flex;
-    gap: 16px;
-    font-size: 12px;
-    color: var(--text-secondary);
-    margin-top: 8px;
+    gap: 12px;
+    font-size: 11px;
+    color: var(--text-tertiary);
+    margin-top: 4px;
 }
 
 .forecast-details p {
@@ -98,11 +97,11 @@
 @media (max-width: 768px) {
     .forecast-container {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 12px;
+        gap: 10px;
     }
 
     .forecast-card {
-        padding: 16px;
+        padding: 16px 12px;
     }
 
     .forecast-icon {
@@ -115,7 +114,7 @@
     }
 
     .temp-low {
-        font-size: 16px;
+        font-size: 15px;
     }
 }
 
