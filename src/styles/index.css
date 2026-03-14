@@ -1,15 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 
 :root {
-  --text-primary: rgba(0, 0, 0, 1);
-  --text-secondary: rgba(0, 0, 0, 0.64);
-  --text-inverse: rgba(255, 255, 255, .8);
-  --surface-primary: rgba(0, 0, 0, .12);
-  --surface-green: #065428;
-  --blue: rgba(18, 129, 255, 1);
-  --blue-alpha: rgba(18, 129, 255, 0.4);
+  /* Monochromatic Color Palette with Blue Accent */
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --primary-light: #3b82f6;
+  --primary-alpha: rgba(37, 99, 235, 0.08);
 
-  --white: rgba(255, 255, 255, 1);
-  --error-color: #ba0205;
+  --accent: #2563eb;
+  --accent-dark: #1d4ed8;
+
+  --success: #2563eb;
+  --warning: #64748b;
+  --error: #dc2626;
+
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --text-tertiary: #94a3b8;
+  --text-inverse: #ffffff;
+
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+
+  --surface-primary: #ffffff;
+  --surface-secondary: #f8fafc;
+  --surface-border: #e2e8f0;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+  --shadow-xl: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+  --radius-full: 9999px;
+
+  /* Legacy support */
+  --white: #ffffff;
+  --blue: var(--primary);
+  --blue-alpha: var(--primary-alpha);
+  --surface-green: var(--success);
+  --error-color: var(--error);
 }

@@ -1,18 +1,18 @@
 .unit-toggle {
     position: relative;
     display: flex;
-    background-color: var(--surface-primary);
+    background-color: var(--bg-secondary);
     border-radius: 100px;
     margin: 1rem 0;
     font-weight: 700;
     overflow: hidden;
     width: 200px;
-    padding: 8px;
+    padding: 6px;
     text-align: center;
     justify-content: center;
     align-items: center;
-    gap: 8px;
-
+    gap: 4px;
+    border: 1px solid var(--surface-border);
 }
 
 /* Slider behind buttons */
@@ -21,11 +21,10 @@
     top: 4px;
     bottom: 4px;
     left: 4px;
-    /* only left needed */
     width: calc(50% - 4px);
-    background-color: var(--white);
+    background-color: var(--primary);
     border-radius: 100px;
-    transition: transform 150ms ease-in-out;
+    transition: transform 200ms ease-in-out;
     z-index: 0;
 }
 
@@ -50,9 +49,11 @@
     color: var(--text-secondary);
     position: relative;
     z-index: 1;
+    padding: 8px 12px;
+    font-size: 13px;
 }
 
 /* Active button text color */
 .unit-toggle button.active {
-    color: var(--text-primary);
+    color: var(--text-inverse);
 }
