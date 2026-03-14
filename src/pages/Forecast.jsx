@@ -3,6 +3,7 @@ import SearchBar from "../components/SearchBar"
 import ForecastCard from "../components/ForecastCard"
 import ErrorMessage from "../components/ErrorMessage"
 import UnitToggle from "../components/UnitToggle"
+import { useSavedCities } from "../context/SavedCitiesContext"
 
 import "../styles/App.css"
 import "../styles/Forecast.css"
@@ -17,6 +18,9 @@ function Forecast() {
     const [city, setCity] = useState("")
     const [currentCity, setCurrentCity] = useState("Cupertino")
     const [unit, setUnit] = useState("imperial")
+
+    // Saved cities hook
+    const { addCity, removeCity, isCitySaved } = useSavedCities()
 
     // API key
     const API_KEY = import.meta.env.VITE_OPENWEATHER_KEY
@@ -83,6 +87,19 @@ function Forecast() {
         fetchForecast(currentCity)
     }, [unit])
 
+    const handleToggleSaveCity = () => {
+        if (!currentCity) return
+
+        if (isCitySaved(currentCity)) {
+            removeCity(currentCity)
+        } else {
+            const success = addCity(currentCity)
+            if (!success) {
+                alert("City is already saved!")
+            }
+        }
+    }
+
     return (
         <div className="main">
             <SearchBar
@@ -94,6 +111,15 @@ function Forecast() {
             />
 
             <h1>5-Day Forecast for {currentCity}</h1>
+
+            {currentCity && (
+                <button
+                    onClick={handleToggleSaveCity}
+                    className="save-city-btn"
+                >
+                    {isCitySaved(currentCity) ? "★ Saved" : "☆ Save City"}
+                </button>
+            )}
 
             <UnitToggle unit={unit} setUnit={setUnit} />
 

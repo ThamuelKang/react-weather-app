@@ -3,6 +3,7 @@ import SearchBar from "../components/SearchBar"
 import WeatherCard from "../components/WeatherCard"
 import ErrorMessage from "../components/ErrorMessage"
 import UnitToggle from "../components/UnitToggle"
+import { useSavedCities } from "../context/SavedCitiesContext"
 
 import "../styles/App.css"
 
@@ -23,6 +24,9 @@ function Home() {
 
     //unit toggle
     const [unit, setUnit] = useState("imperial")
+
+    //saved cities hook
+    const { addCity, removeCity, isCitySaved } = useSavedCities()
 
     //secret
     const API_KEY = import.meta.env.VITE_OPENWEATHER_KEY
@@ -68,12 +72,35 @@ function Home() {
         fetchWeather("Cupertino")
     }, [unit])
 
+    const handleToggleSaveCity = () => {
+        if (!weather) return
+
+        if (isCitySaved(weather.name)) {
+            removeCity(weather.name)
+        } else {
+            const success = addCity(weather.name)
+            if (!success) {
+                alert("City is already saved!")
+            }
+        }
+    }
+
     return (
 
         <div className="main">
             <SearchBar city={city} setCity={setCity} onSearch={() => fetchWeather(city)} />
 
             <h1>Weather in {weather ? weather.name : "..."}</h1>
+
+            {weather && (
+                <button
+                    onClick={handleToggleSaveCity}
+                    className="save-city-btn"
+                >
+                    {isCitySaved(weather.name) ? "★ Saved" : "☆ Save City"}
+                </button>
+            )}
+
             <ErrorMessage message={error} />
             <WeatherCard weather={weather} unit={unit} setUnit={setUnit} />
             {loading && <p>Loading...</p>}

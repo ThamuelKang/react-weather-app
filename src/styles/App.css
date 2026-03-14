@@ -54,7 +54,11 @@ p {
 }
 
 button {
+<<<<<<< HEAD
     background: var(--primary);
+=======
+    background-color: var(--primary);
+>>>>>>> 59c0789 (added save funcitonality)
     border: none;
     padding: 12px 24px;
     border-radius: var(--radius-md);
@@ -79,8 +83,13 @@ button:focus {
     box-shadow: 0 0 0 3px var(--primary-alpha);
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--primary-alpha);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
     .main {
         padding: 24px;
         margin: 16px;
