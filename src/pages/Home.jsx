@@ -52,7 +52,10 @@ function Home() {
                 name: data.name,
                 temperature: data.main.temp,
                 wind: data.wind.speed,
-                condition: data.weather[0].description
+                condition: data.weather[0].description,
+                icon: data.weather[0].icon,
+                humidity: data.main.humidity,
+                feelsLike: data.main.feels_like
             });
         } catch (error) {
             setError("Failed to fetch weather");

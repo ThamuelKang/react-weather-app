@@ -1,11 +1,14 @@
-
+* {
+    box-sizing: border-box;
+}
 
 body {
     background-color: pink;
     text-align: center;
     font-family: "Google Sans", sans-serif;
-    box-sizing: border-box;
     font-size: 14px;
+    margin: 0;
+    padding: 0;
 }
 
 .main {
@@ -17,6 +20,14 @@ body {
     border-radius: 12px;
     background-color: var(--white);
     padding: 48px;
+    margin: 24px auto;
+    max-width: 1200px;
+    min-height: 400px;
+}
+
+h1 {
+    margin: 16px 0;
+    color: var(--text-primary);
 }
 
 button {
@@ -24,6 +35,24 @@ button {
     border: 1px solid var(--surface-primary);
     padding: 8px 12px;
     border-radius: 8px;
-    color: var(--text-inverse)
+    color: var(--text-inverse);
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .main {
+        padding: 24px;
+        margin: 16px;
+    }
+}
